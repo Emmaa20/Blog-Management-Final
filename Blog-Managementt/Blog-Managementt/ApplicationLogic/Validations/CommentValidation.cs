@@ -7,7 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-    internal class CommentValidation
+    public class CommentValidation
     {
+        public static bool IsValidComment(string content)
+        {
+            if (content.Length >= 10 & content.Length <= 35)
+            {
+                return true;
+            }
+            Console.WriteLine("Length sould be between 10 and 35");
+            return false;
+        }
     }
 }
