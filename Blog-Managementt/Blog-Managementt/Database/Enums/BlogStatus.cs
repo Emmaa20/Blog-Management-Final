@@ -8,9 +8,9 @@ namespace Blog_Managementt.Database.Enums
 {
     public enum BlogStatus
     {
-        Sended = 1,
-        Approved = 2,
-        Rejected = 3
+        Created = 1,
+        Approve = 2,
+        Reject = 3,
 
     }
 }
