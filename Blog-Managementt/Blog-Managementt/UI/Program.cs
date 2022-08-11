@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Blog_Managementt.ApplicationLogic;
+using System;
 
 namespace Blog_Managementt.UI
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
@@ -60,5 +61,6 @@ namespace Blog_Managementt.UI
                     Console.WriteLine("Command not found ...");
                 }
             }
+        }
     }
 }
