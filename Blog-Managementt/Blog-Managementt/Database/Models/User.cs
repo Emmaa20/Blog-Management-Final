@@ -1,5 +1,5 @@
 ﻿using Blog_Managementt.Database.Models.Common;
-using Blog_Managementt.Database.Repository123;
+using Blog_Managementt.Database.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace Blog_Managementt.Database.Models
             Surname = surname;
             Email = email;
             Password = password;
-            ID = id;
+            Id = id;
         }
 
         public User(string name, string surname, string email, string password)
@@ -33,7 +33,7 @@ namespace Blog_Managementt.Database.Models
             Surname = surname;
             Email = email;
             Password = password;
-            ID = UserRepository.IDCounter;
+            Id = UserRepository.IDCounter;
         }
         public User(string name, string surname)
         {
@@ -48,7 +48,7 @@ namespace Blog_Managementt.Database.Models
 
         public virtual string GetFullInfo()
         {
-            return ID + "" + Name + "" + Surname + "" + Email;
+            return Id + "" + Name + "" + Surname + "" + Email;
         }
     }
 }
