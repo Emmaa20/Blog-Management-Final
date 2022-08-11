@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog_Managementt.Database.Models
 {
-    internal class User
+    public class User
     {
         public int ID { get; private set; }
         public string Name { get; set; }
@@ -34,6 +34,11 @@ namespace Blog_Managementt.Database.Models
             Email = email;
             Password = password;
             ID = UserRepository.IDCounter;
+        }
+        public User(string name, string surname)
+        {
+            Name = name;
+            Surname = surname;
         }
 
         public virtual string GetInfo()
