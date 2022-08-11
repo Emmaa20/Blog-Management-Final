@@ -1,4 +1,5 @@
-﻿using Blog_Managementt.Database.Repository;
+﻿using Blog_Managementt.Database.Models.Common;
+using Blog_Managementt.Database.Repository123;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Blog_Managementt.Database.Models
 {
-    public class User
+    public class User : Entity<int>
     {
-        public int ID { get; private set; }
         public string Name { get; set; }
 
         public string Surname { get; set; }
