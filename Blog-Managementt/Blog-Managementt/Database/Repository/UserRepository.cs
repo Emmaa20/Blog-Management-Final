@@ -33,9 +33,9 @@ namespace Blog_Managementt.Database.Repository
 
         public static List<User> Users { get; set; } = new List<User>()
         {
-            new User ("Elmira","Kerimova","emma@code.edu.az","123"),
-            new User("Nigar","Kerimova","nigga@code.edu.az","1234"),
-            new User("Ibrahim","Kerimov","ibo@code.edu.az","12345"),
+            new User ("Elmira","Kerimova","emma@code.edu.az","123321"),
+            new User("Nigar","Kerimova","nigga@code.edu.az","123321"),
+            new User("Ibrahim","Kerimov","ibo@code.edu.az","123321"),
 
         };
         public static User Add(string name, string surname, string email, string password)
