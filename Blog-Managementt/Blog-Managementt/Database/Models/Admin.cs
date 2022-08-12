@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blog_Managementt.Database.Models
 {
-    public class Admin:User
+    public class Admin:User //the admin model is ready
     {
         public Admin(string name, string surname, string email, string password)
            : base(name, surname, email, password)

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace Blog_Managementt.Database.Models
 {
-
     public class Comment : Entity<int>
     {
         public User FromUser { get; set; }

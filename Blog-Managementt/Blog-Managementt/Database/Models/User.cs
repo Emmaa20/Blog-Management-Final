@@ -8,24 +8,13 @@ using System.Threading.Tasks;
 
 namespace Blog_Managementt.Database.Models
 {
-    public class User : Entity<int>
+    public class User : Entity<int>  //The user model is ready
     {
         public string Name { get; set; }
-
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         protected DateTime Time { get; set; } = DateTime.Now;
-
-
-        public User(string name, string surname, string email, string password, int id)
-        {
-            Name = name;
-            Surname = surname;
-            Email = email;
-            Password = password;
-            Id = id;
-        }
 
         public User(string name, string surname, string email, string password)
         {
@@ -35,20 +24,11 @@ namespace Blog_Managementt.Database.Models
             Password = password;
             Id = UserRepository.IDCounter;
         }
-        public User(string name, string surname)
-        {
-            Name = name;
-            Surname = surname;
-        }
 
         public virtual string GetInfo()
         {
             return Name + " " + Surname;
         }
 
-        public virtual string GetFullInfo()
-        {
-            return Id + "" + Name + "" + Surname + "" + Email;
-        }
     }
 }
