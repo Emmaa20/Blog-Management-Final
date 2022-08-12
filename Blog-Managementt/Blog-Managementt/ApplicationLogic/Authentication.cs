@@ -97,13 +97,13 @@ namespace Blog_Managementt.ApplicationLogic
         public static string GetBlogTitle()
         {
             Console.Write("Please enter blog title: ");
-            string blogTitle = Console.ReadLine();
-            while (!BlogValidation.IsValidTitle(blogTitle))
+            string title = Console.ReadLine();
+            while (!BlogValidation.IsValidTitle(title))
             {
                 Console.Write("Please enter blog title again: ");
-                blogTitle = Console.ReadLine();
+                title = Console.ReadLine();
             }
-            return blogTitle;
+            return title;
 
         }
         public static string GetBlogContent()
@@ -118,68 +118,10 @@ namespace Blog_Managementt.ApplicationLogic
             return blogContent;
 
         }
-        public static string GetName()
-        {
-            Console.Write("Please enter user's name : ");
-            string Name = Console.ReadLine();
-            while (!UserValidation.IsNameValid(Name))
-            {
-                Console.Write("Please enter correct user's name : ");
-                Name = Console.ReadLine();
-            }
-            return Name;
-        }
-        public static string GetSurname()
-        {
-
-            Console.Write("Please enter user's surname :");
-            string surname = Console.ReadLine();
-            while (!UserValidation.IsSurnameValid(surname))
-            {
-                Console.Write("Please enter correct user's surname : ");
-                surname = Console.ReadLine();
-            }
-            return surname;
-        }
-        public static string GetEmail()
-        {
-            Console.Write("Please enter user's email : ");
-            string email = Console.ReadLine();
-            while (!UserValidation.IsEmailValid(email) && !UserValidation.IsUserExitsUnique(email))
-            {
-                Console.Write("Please enter correct user's email : ");
-                email = Console.ReadLine();
-            }
-            return email;
-        }
-        public static string GetPassword()
-        {
-            Console.Write("Please enter user's password : ");
-            string password = Console.ReadLine();
-
-            while (!UserValidation.IsPasswordValid(password))
-            {
-                Console.Write("Please enter again user's password correctly : ");
-                password = Console.ReadLine();
-            }
-            Console.Write("Please enter again user's password : ");
-            string confirmPassword = Console.ReadLine();
-            while (!UserValidation.IsPasswordsMatch(password, confirmPassword))
-            {
-                Console.Write("No match passwords");
-                confirmPassword = Console.ReadLine();
-            }
-            return password;
-
-        }
-
-
 
         public static void ShowAuditingBlogs()
         {
-            Repository<User, int> baserepo = new Repository<User, int>();
             BlogRepository blogRepo = new BlogRepository();
-            InboxRepository inboxRepo = new InboxRepository();
 
             List<Blog> blogs = blogRepo.GetAll(b => b.BlogStatus == BlogStatus.Created);
             foreach (Blog blog in blogs)
@@ -189,13 +131,12 @@ namespace Blog_Managementt.ApplicationLogic
         }
         public static void ApproveBlog()
         {
-            Repository<User, int> baserepo = new Repository<User, int>();
             BlogRepository blogRepo = new BlogRepository();
             InboxRepository inboxRepo = new InboxRepository();
 
-            Console.Write("Please enter blog's BlogCode: ");
-            string blogCode = Console.ReadLine();
-            Blog blog = blogRepo.GetById(blogCode);
+            Console.Write("Please enter blog's Blog Code: ");
+            string blogID = Console.ReadLine();
+            Blog blog = blogRepo.GetById(blogID);
             if (blog != null && blog.BlogStatus == BlogStatus.Created)
             {
                 blog.BlogStatus = BlogStatus.Approve;
@@ -229,7 +170,7 @@ namespace Blog_Managementt.ApplicationLogic
         public static void AddComment()
         {
             CommentRepository commentRepo = new CommentRepository();
-            
+
 
             Console.Write("Please enter blog code: ");
             string blogCode = Console.ReadLine();
@@ -249,7 +190,7 @@ namespace Blog_Managementt.ApplicationLogic
         }
         public static void Blogs()
         {
-          
+
             BlogRepository blogRepo = new BlogRepository();
 
             List<Blog> blogs = blogRepo.GetAll();

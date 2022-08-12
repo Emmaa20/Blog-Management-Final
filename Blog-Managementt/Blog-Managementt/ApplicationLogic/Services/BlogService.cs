@@ -28,14 +28,12 @@ namespace Blog_Managementt.ApplicationLogic.Services
                     {
                         Console.WriteLine($"{counter}" + comment.ToString());
                         counter++;
-                    }
+                    } 
                 }
-
-
             }
 
         }
-        public static void FindBlogByFilter()
+        public static void ShowFilteredBlogsWithComments()
         {
             Console.WriteLine("/Title");
             Console.WriteLine("Lastname");

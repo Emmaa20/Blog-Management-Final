@@ -55,19 +55,7 @@ namespace Blog_Managementt.ApplicationLogic.Validations
             return false;
         }
 
-        public static bool IsLogin(string email, string password)
-        {
-            foreach (User user in UserRepository.Users)
-            {
-                if (user.Email == email && user.Password == password)
-                {
-                    return true;
-                }
-            }
-            Console.WriteLine("The information is incorrect");
-            return false;
-
-        }
+       
 
         public static bool IsUserExitsUnique(string email)
         {
