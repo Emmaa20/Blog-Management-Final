@@ -1,4 +1,5 @@
 ﻿using Blog_Managementt.ApplicationLogic;
+using Blog_Managementt.ApplicationLogic.Services;
 using System;
 
 namespace Blog_Managementt.UI
@@ -29,27 +30,22 @@ namespace Blog_Managementt.UI
                 if (command == "/register")
                 {
                     Authentication.Register();
-
                 }
                 else if (command == "/login")
                 {
-
                     Authentication.Login();
-
                 }
                 else if (command == "/show-blogs-with-comments")
                 {
-
+                    BlogService.ShowBlogsWithComment();
                 }
                 else if (command == "/show-filtered-blogs-with-comments")
                 {
-
-
+                    BlogService.ShowFilteredBlogsWithComments();
                 }
                 else if (command == "/find-blog-by-code")
                 {
-
-
+                    BlogService.FindBlogByCode();
                 }
                 else if (command == "/exit")
                 {
