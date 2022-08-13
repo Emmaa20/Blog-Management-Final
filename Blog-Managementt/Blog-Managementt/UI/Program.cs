@@ -41,7 +41,7 @@ namespace Blog_Managementt.UI
                 }
                 else if (command == "/show-filtered-blogs-with-comments")
                 {
-                    BlogService.ShowFilteredBlogsWithComments();
+                    BlogService.ShowFilteredBlogsWithComments();  
                 }
                 else if (command == "/find-blog-by-code")
                 {
