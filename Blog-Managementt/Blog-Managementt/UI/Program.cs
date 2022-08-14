@@ -12,7 +12,7 @@ namespace Blog_Managementt.UI
             Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine();
             Console.WriteLine("                             *******************************************************                ");
-            Console.WriteLine("                             *********** WELCOME OUR APPLICATION *******************                ");
+            Console.WriteLine("                             *********** WELCOME TO OUR APPLICATION *******************                ");
             Console.WriteLine("                             *******************************************************                ");
             Console.Beep();
             Console.WriteLine();
