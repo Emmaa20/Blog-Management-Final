@@ -23,16 +23,13 @@ namespace Blog_Managementt.Database.Repository
         }
         static UserRepository()
         {
-            DefaultData();
-        }
-        private static void DefaultData()
-        {
             DBcontect.Add(new Admin("Emma", "Kerimova", "emma@code.edu.az", "123321"));
             DBcontect.Add(new Admin("Nigar", "Kerimova", "nigga@code.edu.az", "123321"));
             DBcontect.Add(new User("Elmira", "Kerimova", "emma@code.edu.az", "123321"));
             DBcontect.Add(new User("Nigar", "Kerimova", "nigga@code.edu.az", "123321"));
             DBcontect.Add(new User("Ibrahim", "Kerimov", "ibo@code.edu.az", "123321"));
         }
+        
 
         
         public static User Add(string name, string surname, string email, string password)

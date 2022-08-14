@@ -15,16 +15,16 @@ namespace Blog_Managementt.ApplicationLogic.Services
         public static CommentRepository comments = new CommentRepository();
         public static void ShowBlogsWithComment()
         {
-            BlogRepository blogRepo = new BlogRepository();
-            CommentRepository commentRepo = new CommentRepository();
-            List<Blog> blogs = blogRepo.GetAll();
+            BlogRepository blogRepository = new BlogRepository();
+            CommentRepository commentRepository = new CommentRepository();
+            List<Blog> blogs = blogRepository.GetAll();
             foreach (Blog blog in blogs)
             {
                 if (blog.BlogStatus == BlogStatus.Approve)
                 {
                     Console.WriteLine(blog.GetBlogFullInfo());
                     int counter = 1;
-                    foreach (Comment comment in commentRepo.GetAll(c => c.Blog == blog))
+                    foreach (Comment comment in commentRepository.GetAll(c => c.Blog == blog))
                     {
                         Console.WriteLine($"{counter}" + comment.ToString());
                         counter++;
@@ -36,7 +36,7 @@ namespace Blog_Managementt.ApplicationLogic.Services
         public static void ShowFilteredBlogsWithComments()
         {
             Console.WriteLine("/Title");
-            Console.WriteLine("Lastname");
+            Console.WriteLine("/Lastname");
             Console.Write("Enter suitable command: ");
             string command = Console.ReadLine();
             if (command == "/Title")
@@ -66,9 +66,9 @@ namespace Blog_Managementt.ApplicationLogic.Services
 
 
             }
-            if (command == "Lastname")
+            if (command == "/Lastname")
             {
-                Console.Write("Please enter owener's lastname: ");
+                Console.Write("Please enter user's lastname: ");
                 string lastName = Console.ReadLine();
                 int count = 1;
                 foreach (Blog blog in blogs.GetAll())
@@ -96,8 +96,8 @@ namespace Blog_Managementt.ApplicationLogic.Services
         public static void FindBlogByCode()
         {
             Console.Write("Please enter blog code: ");
-            string blogCode = Console.ReadLine();
-            Blog blog = blogs.GetById(blogCode);
+            string blogID = Console.ReadLine();
+            Blog blog = blogs.GetById(blogID);
             if (blog.BlogStatus == BlogStatus.Approve)
             {
                 Console.WriteLine(blog.GetBlogFullInfo());
